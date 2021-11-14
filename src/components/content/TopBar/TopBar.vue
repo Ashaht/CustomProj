@@ -42,6 +42,9 @@
             <img slot="item-icon" src="@/assets/img/TopBar/setting.png" alt="">
             <img slot="item-icon-active" src="@/assets/img/TopBar/setting-fill.png" alt="">
           </top-bar-item>
+          <div class="edit">
+            <img src="@/assets/img/TopBar/edit-square.png" alt="">
+          </div>
         </div>
       </div>
     </div>
@@ -133,7 +136,37 @@ export default {
     padding-right: 5px;
   }
 
-  .right-bar-right{
+  .right-bar-right {
     border-left: 1px solid #d9d9d9;
+  }
+
+  .edit {
+    height: 26px;
+    width: 24px;
+    background: linear-gradient(to bottom, #fa7d3c 0%,#f56010 100%);
+    text-align: center;
+    border-radius: 2px;
+    cursor: pointer;
+  }
+
+  .edit :hover{
+    height: 26px;
+    width: 24px;
+    background: #f56010;
+    text-align: center;
+    border-radius: 2px;
+    cursor: pointer;
+  }
+
+  .edit img{
+    height: 20px;
+    width: 20px;
+    padding-top: 2px;
+  }
+
+  .edit:hover img{
+    height: 20px;
+    width: 20px;
+    padding-top: 2px;
   }
 </style>
