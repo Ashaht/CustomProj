@@ -3,7 +3,10 @@ a {
   text-decoration: none;
 }
 
-
+ul,
+li {
+  list-style:none
+}
 /* div {
   box-sizing: border-box;
 } */
