@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  name: 'TopBarItem',
+  name: 'SearchIcon',
   props: {
     path: String
   },
@@ -35,8 +35,9 @@ export default {
 
 <style scoped>
 .tab-bar-item{
-  flex: 1;
-  text-align: center;
+  position: absolute;
+  top: 4px;
+  left: 440px;
   white-space: nowrap;
   height: 30px;
   font-size: 14px;
@@ -45,8 +46,6 @@ export default {
 }
 
 .tab-bar-item:hover{
-  flex: 1;
-  text-align: center;
   height: 30px;
   font-size: 14px;
   margin-right: 20px;

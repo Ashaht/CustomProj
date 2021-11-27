@@ -7,7 +7,10 @@
       <div class="search-bar">
         <span>
           <input type="text" placeholder="大家正在搜:" class="search">
-          <a href="#" title="搜索" class="search-icon"></a>
+          <search-icon path="/search">
+            <img slot="item-icon" src="@/assets/img/TopBar/search.png" alt="">
+            <img slot="item-icon-active" src="@/assets/img/TopBar/search-fill.png" alt="">
+          </search-icon>
         </span>
       </div>
       <div class="right-bar">
@@ -32,13 +35,18 @@
             <img slot="item-icon-active" src="@/assets/img/TopBar/smile-fill.png" alt="">
             <span slot="item-text">游戏</span>
           </top-bar-item>
+          <top-bar-item path="/user">
+            <img slot="item-icon" src="@/assets/img/TopBar/user.png" alt="">
+            <img slot="item-icon-active" src="@/assets/img/TopBar/user-fill.png" alt="">
+            <span slot="item-text">纸盒子_</span>
+          </top-bar-item>
         </div>
         <div class="right-bar-right">
           <top-bar-item path="/email">
             <img slot="item-icon" src="@/assets/img/TopBar/mail.png" alt="">
             <img slot="item-icon-active" src="@/assets/img/TopBar/mail-fill.png" alt="">
           </top-bar-item>
-          <top-bar-item path="/email">
+          <top-bar-item path="/setting">
             <img slot="item-icon" src="@/assets/img/TopBar/setting.png" alt="">
             <img slot="item-icon-active" src="@/assets/img/TopBar/setting-fill.png" alt="">
           </top-bar-item>
@@ -53,11 +61,13 @@
 
 <script>
 import TopBarItem from './TopBarItem.vue'
+import SearchIcon from './SearchIcon.vue'
 
 export default {
   name: 'TopBar',
   components: {
-    TopBarItem
+    TopBarItem,
+    SearchIcon
   },
   data() {
     return {
@@ -71,8 +81,6 @@ export default {
 <style scoped>
   .top-bar {
     position: fixed;
-    display: flex;
-    justify-content: center;
 
     height: 48px;
     width: 100%;
@@ -92,20 +100,23 @@ export default {
   .top-bar-wrapper {
     position: relative;
     display: flex;
+    justify-content: space-between;
     align-items: center;
   }
 
   .logo {
     display: block;
-    margin-left: 50px;
-    width: 140px;
+    margin-left: 120px;
+    width: 110px;
     height: 48px;
     cursor: pointer;
     background: url('../../../assets/img/TopBar/WB_logo.png') no-repeat 0 40%;
   }
 
   .search-bar {
+    flex: 1;
     display: block;
+    position: relative;
   }
 
   .search {
@@ -114,16 +125,29 @@ export default {
     background-color: #F2F2F5;
     padding: 4px 33px 4px 10px;
     height: 20px;
+    width: 425px;
     line-height: 20px;
     border: 1px solid #CCCCCC;
     border-radius: 0;
+  }
+
+  .search:focus {
+    font-size: 12px;
+    color: #808080;
+    background-color: #F2F2F5;
+    padding: 4px 33px 4px 10px;
+    height: 20px;
+    width: 425px;
+    line-height: 20px;
+    border: 1px solid #FA7D3C;
+    border-radius: 0;
+    outline: none;
   }
 
   .right-bar {
     display: flex;
     justify-content: flex-end;
     height: 26px;
-    width: 580px;
   }
 
   .right-bar-left,
@@ -137,6 +161,8 @@ export default {
   }
 
   .right-bar-right {
+    padding-left: 21px;
+    margin-right: 90px;
     border-left: 1px solid #d9d9d9;
   }
 
@@ -159,14 +185,19 @@ export default {
   }
 
   .edit img{
+    text-align: center;
     height: 20px;
     width: 20px;
     padding-top: 2px;
   }
 
   .edit:hover img{
+    text-align: center;
     height: 20px;
     width: 20px;
     padding-top: 2px;
+    padding-bottom: 4px;
+    padding-left: 2px;
+    padding-right: 2px;
   }
 </style>
